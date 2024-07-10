@@ -1,7 +1,4 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
+// Create a Music Player using Java langauge 
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -10,27 +7,41 @@ import java.util.ListIterator;
 import java.util.Scanner;
 
 public class Main {
+    // Step-by-Step Description
+    // Create an ArrayList to store all the albums
     private static ArrayList<Album> albums = new ArrayList();
 
     public Main() {
     }
 
     public static void main(String[] args) {
+        // Create a new album with the name "Album1" and artist "AC/DC"
         Album album = new Album("Album1", "AC/DC");
+        // Add songs to the album with their respective durations
         album.addSong("TNT", 4.5);
         album.addSong("Highway to hell", 3.5);
         album.addSong("ThunderStruck", 5.0);
+         // Add the album to the albums list
         albums.add(album);
+
+        // Create another album with the name "Album2" and artist "Eminem"
         album = new Album("Album2", "Eminem");
+        // Add songs to the album with their respective durations
         album.addSong("Rap god", 4.5);
         album.addSong("Not Afraid", 3.5);
         album.addSong("Lose yourself", 4.5);
+        // Add the album to the albums list
         albums.add(album);
+
+        
+        // Create a LinkedList to store the playlist
         LinkedList<Song> playList_1 = new LinkedList();
+         // Add songs from the albums to the playlist
         ((Album)albums.get(0)).addToPlayList("TNT", playList_1);
         ((Album)albums.get(0)).addToPlayList("Highway to hell", playList_1);
         ((Album)albums.get(1)).addToPlayList("Rap god", playList_1);
         ((Album)albums.get(1)).addToPlayList("Lose yourself", playList_1);
+         // Start playing the playlist
         play(playList_1);
     }
 
